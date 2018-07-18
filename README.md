@@ -4,9 +4,9 @@
 
 ##The weather web - application
 
-(!) Data can be recieved from web-site - openweathermap.org or from another web resource
+(!) Data can be received from web-site - openweathermap.org or from another web resource
 
-(!) Requred libs for this app are: react.js and redux.
+(!) Required libs for this app are: react.js and redux.
 
 Application functionality:
 
