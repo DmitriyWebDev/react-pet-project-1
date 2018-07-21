@@ -1,10 +1,18 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+/* Bootstrap 3 customize styles */
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.content {
-    max-width: 1200px;
-    margin: 0 auto;
+.container .row {
+    margin-left: 0;
+    margin-right: 0;
 }
+
+.container .row>div {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* END Bootstrap 3 customize styles */

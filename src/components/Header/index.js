@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import HeaderSearch from '../HeaderSearch';
+import TemperatureMeasurementSwitcher from '../TemperatureMeasurementSwitcher';
+import RegisterButtons from '../RegisterButtons';
 
 
 const PageHeader = styled.header`
@@ -9,20 +11,16 @@ const PageHeader = styled.header`
   border-bottom: 1px solid #666;
 `;
 
-const PageHeaderInner = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
+const PageHeaderTopLineRegisterBtnsWrap = styled.div`
+  
+`;
+
+const PageHeaderTopLineTempSwitcher = styled.div`
+  
+  
 `;
 
 const PageHeaderTopLine = styled.div`
-  background: red;
-  
-`;
-
-const PageHeaderTopLineEmail = styled.div`
-  
   
 `;
 
@@ -42,29 +40,43 @@ class Header extends Component {
     return (
       <PageHeader>
 
-        <div className="content">
+        <div className="container">
 
-          <PageHeaderInner>
+          <PageHeaderTopLine>
 
-            <PageHeaderTopLine>
+            <div className="row">
 
-              <PageHeaderTopLineEmail>
-                support@email
-              </PageHeaderTopLineEmail>
+              <div className="col-sm-7">
+                <PageHeaderTopLineSearch>
+                  <HeaderSearch/>
+                </PageHeaderTopLineSearch>
+              </div>
 
-              <PageHeaderTopLineSearch>
-                <HeaderSearch/>
-              </PageHeaderTopLineSearch>
+              <div className="col-sm-3">
+                <PageHeaderTopLineRegisterBtnsWrap>
+                  <RegisterButtons/>
+                </PageHeaderTopLineRegisterBtnsWrap>
+              </div>
 
-            </PageHeaderTopLine>
+              <div className="col-sm-2">
+                <PageHeaderTopLineTempSwitcher>
+                  <TemperatureMeasurementSwitcher/>
+                </PageHeaderTopLineTempSwitcher>
+              </div>
 
-            <PageHeaderBottomLine>
+            </div>
+
+          </PageHeaderTopLine>
+
+          <PageHeaderBottomLine>
+
+            <div className="row">
 
               bottom line
 
-            </PageHeaderBottomLine>
+            </div>
 
-          </PageHeaderInner>
+          </PageHeaderBottomLine>
 
         </div>
 
