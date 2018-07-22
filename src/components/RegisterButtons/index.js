@@ -16,7 +16,8 @@ const RegisterButtonsBlockSignInBtn = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 10px 10px 11px;
+  padding: 12px 10px 11px;
+  max-height: 37px;
   transition: background .5s;
   cursor: pointer;
   
@@ -39,7 +40,8 @@ const RegisterButtonsBlockSignUpBtn = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 10px 10px 11px;
+  padding: 12px 10px 11px;
+  max-height: 37px;
   transition: background .5s;
   cursor: pointer;
   
