@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header'
 import Footer from './Footer'
+import UserLocationDisplay from './UserLocationDisplay'
 
 
 class Root extends Component {
@@ -10,8 +11,8 @@ class Root extends Component {
 
         <Header/>
 
-        <div>
-          Content
+        <div className="container">
+          <UserLocationDisplay/>
         </div>
 
         <Footer/>

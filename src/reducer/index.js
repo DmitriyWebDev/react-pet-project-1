@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux'
+import userLocation from './userLocation'
 
 function test() {
   return {
@@ -7,5 +8,6 @@ function test() {
 }
 
 export default combineReducers({
-  test : test
+  test : test,
+  userLocation
 })

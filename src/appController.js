@@ -22,11 +22,15 @@ const appController = function () {
   const openWeatherApiKey      = '67209e988f814f4a8b8ae8a448cb5bc1'; // test api key
   const openWeatherApiUri      = `${openWeatherApiProtocol}://${openWeatherApiDomain}`;
 
-  const defaultCity = 'London';
+  const defaultCityName = 'London';
+  const defaultCityCoordinates = {
+    latitude  : 51.508530,
+    longitude : -0.076132
+  };
 
   return {
 
-    getWeatherDataByCity : function ( city = defaultCity ) {
+    getWeatherDataByCity : function ( city = defaultCityName ) {
 
       fetch(`${openWeatherApiUri}/data/2.5/weather?q=${city}&APPID=${openWeatherApiKey}`)
         .then(function (response) {
@@ -35,6 +39,20 @@ const appController = function () {
         }).then(function (response) {
           console.log(response);
         })
+        .catch(function (error) {
+          console.log('There has been a problem with your fetch operation: ' + error.message);
+        });
+
+    },
+    getWeatherDataByCoordinates : function ( latitude = defaultCityCoordinates['latitude'], longitude = defaultCityCoordinates['longitude'] ) {
+
+      fetch(`${openWeatherApiUri}/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${openWeatherApiKey}`)
+        .then(function (response) {
+          console.log('Fetch success');
+          return response.json();
+        }).then(function (response) {
+        console.log(response);
+      })
         .catch(function (error) {
           console.log('There has been a problem with your fetch operation: ' + error.message);
         });

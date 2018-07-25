@@ -8,7 +8,6 @@ import './App.css'
 import Root from "./components/Root"
 import store from "./store"
 import {Provider} from 'react-redux'
-import appController from './appController'
 
 // Add Font awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -17,11 +16,6 @@ import { faSearch, faTimes, faSignInAlt, faArrowCircleDown } from '@fortawesome/
 library.add( faSearch, faTimes, faSignInAlt, faArrowCircleDown );
 // END Add Font awesome
 
-
-// test appController, get New York city weather
-appController.getWeatherDataByCity( 'New York' );
-// test appController, get London ( default ) city weather
-appController.getWeatherDataByCity();
 
 class App extends Component {
   render() {
