@@ -8,22 +8,28 @@ const UserLocationBlock = styled.div`
 `;
 
 
-
 class UserLocationDisplay extends Component {
 
   constructor(props) {
     super(props);
+  }
 
-    console.log( this.props );
-    this.props.getUserLocation();
+  componentDidMount() {
+
+    const {userLocation, getUserLocation} = this.props;
+
+    if( !userLocation.locationRequested ) {
+      getUserLocation();
+    }
 
   }
+
 
   render() {
 
     return (
       <UserLocationBlock>
-        Your location
+        Your location is {this.props.userLocation.userCity ? this.props.userLocation.userCity : 'Xz'}
       </UserLocationBlock>
     );
 
@@ -31,4 +37,10 @@ class UserLocationDisplay extends Component {
 
 }
 
-export default connect(null, {getUserLocation}, null, {pure: false})(UserLocationDisplay)
+function mapStateToProps(state) {
+  return {
+    userLocation: state.userLocation,
+  }
+}
+
+export default connect(mapStateToProps, {getUserLocation}, null, {pure: false})(UserLocationDisplay)

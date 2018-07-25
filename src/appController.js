@@ -46,20 +46,26 @@ const appController = function () {
     },
     getWeatherDataByCoordinates : function ( latitude = defaultCityCoordinates['latitude'], longitude = defaultCityCoordinates['longitude'] ) {
 
-      fetch(`${openWeatherApiUri}/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${openWeatherApiKey}`)
-        .then(function (response) {
-          console.log('Fetch success');
-          return response.json();
-        }).then(function (response) {
-        console.log(response);
-      })
-        .catch(function (error) {
-          console.log('There has been a problem with your fetch operation: ' + error.message);
-        });
+      return new Promise((resolve, reject) => {
+
+        fetch(`${openWeatherApiUri}/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${openWeatherApiKey}`)
+
+          .then(function (response) {
+            console.log('getWeatherDataByCoordinates() -> success');
+            return response.json();
+          })
+          .then(function (response) {
+            resolve(response);
+          })
+          .catch(function (error) {
+            reject(new Error('There has been a problem with your fetch operation: ' + error.message));
+          });
+
+      });
 
     }
 
-  }
+  } // END return
 
 }();
 
