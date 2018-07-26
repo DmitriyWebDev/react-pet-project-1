@@ -1,3 +1,5 @@
+import fakeBackend from './fakeBackend';
+
 // 'appController' is a step ( 'adapter' ) between an application view and model communication.
 // Scheme ( application data flow ):
 // 1) View ( react.js app ) -> Controller ( appController.js module ) -> Model ( backend services, APIs, etc. ),
@@ -10,6 +12,7 @@
 // 'appController' supplies functions - wrappers for a client - server communication, user data saving.
 // The functions do network - requests to extraneous APIs, work with local storage,
 // cookies, webWorkers, browser indexed database etc.
+// Also communicate with "fake backend" ( fakeBackend.js module ) for the users accounts creating (registration, authentication etc...).
 
 // 'appController' - this is an all app functionality provider in the browser
 // beyond View ( in this case beyond React.js app ).

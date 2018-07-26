@@ -10,6 +10,6 @@
 
 Application functionality:
 
-1) Add/Remove cities
-2) Save data locally
-3) Automatically getting the weather data by user location - city/place, or city by default
+1) To Add/Remove cities through an user account
+2) To Save data locally
+3) Automatically getting the weather data by user location - city/place, or a city by default

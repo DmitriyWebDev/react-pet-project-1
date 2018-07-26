@@ -29,7 +29,7 @@ class UserLocationDisplay extends Component {
 
     return (
       <UserLocationBlock>
-        Your location is {this.props.userLocation.userCity ? this.props.userLocation.userCity : 'Xz'}
+        {this.props.userLocation.userCity ? 'Your location is ' + this.props.userLocation.userCity : ''}
       </UserLocationBlock>
     );
 
