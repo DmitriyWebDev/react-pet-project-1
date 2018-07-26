@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header'
 import Footer from './Footer'
 import UserLocationDisplay from './UserLocationDisplay'
+import ModalWindowSignUp from './ModalWindowSignUp'
 
 
 class Root extends Component {
@@ -16,6 +17,8 @@ class Root extends Component {
         </div>
 
         <Footer/>
+
+        <ModalWindowSignUp show={false} />
 
       </div>
     );
